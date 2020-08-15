@@ -17,7 +17,7 @@ export default class PlantList extends Component {
       axios
         .get("http://localhost:3333/plants")
         .then((response) => {console.log("Plant List", response);
-          this.setState({ plants: this.state.plants }) })
+          this.setState({ plants: response.data.plantsData }) }) // this.state.plants
         .catch((err) => console.log(`Cannot fetch data: ${err}`))
     }
   /*********  DON'T CHANGE ANYTHING IN THE RENDER FUNCTION *********/
