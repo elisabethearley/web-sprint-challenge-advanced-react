@@ -24,7 +24,7 @@ test("form shows success message on submit with form details", () => {
     const zipEntry = getByLabelText(/Zip/i);
 
     fireEvent.change(firstNameEntry, {
-        target: {name: "firstName", value: "Liz"}
+        target: {name: "firstName", value: "Lizzy"}
     });
     fireEvent.change(lastNameEntry, {
         target: {name: "firstName", value: "Earley"}
