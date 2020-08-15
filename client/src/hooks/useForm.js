@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 const initialValue = {
     firstName: "",
@@ -9,9 +9,13 @@ const initialValue = {
     zip: "",
   };
 
-  export const useForm = (props) => {
+  export const useForm = () => {
     const [showSuccessMessage, setShowSuccessMessage] = useState(false);
     const [values, setValues] = useState(initialValue);
   
-    return [showSuccessMessage, setShowSuccessMessage, values, setValues]
+    const handleChanges = (e) => {
+        setValues({ ...values, [e.target.name]: e.target.value });
+    };
+
+    return [showSuccessMessage, setShowSuccessMessage, values, handleChanges]
   }
